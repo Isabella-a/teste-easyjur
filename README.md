@@ -23,52 +23,15 @@ Esta aplicação permite a gestão de tarefas em uma agenda, com funcionalidades
 Clone o repositório para sua máquina local.
 
 ```bash
-git clone https://github.com/seu-usuario/agenda-tarefas.git
-cd agenda-tarefas
+git clone https://github.com/Isabella-a/teste-easyjur.git
+cd teste-tecnico-php
 ```
 
 ### 2. Configurar o Banco de Dados
-Crie um banco de dados no MySQL com o nome agenda_tarefas.
-Execute os scripts SQL para criar as tabelas necessárias. Exemplos de SQL podem ser encontrados no diretório src/db.
-
-Tabela usuarios: Armazena os dados dos usuários.
-```sql
-CREATE TABLE usuarios (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    telefone VARCHAR(15) NOT NULL,
-    email VARCHAR(100) NOT NULL UNIQUE,
-    senha VARCHAR(255) NOT NULL,
-    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-```
-
-Tabela permissoes: Armazena as permissões por usuário.
-```sql
-CREATE TABLE permissoes (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    usuario_id INT NOT NULL,
-    visualizar BOOLEAN DEFAULT FALSE,
-    editar BOOLEAN DEFAULT FALSE,
-    cadastrar BOOLEAN DEFAULT FALSE,
-    excluir BOOLEAN DEFAULT FALSE,
-    imprimir BOOLEAN DEFAULT FALSE,
-    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
-);
-```
-
-Tabela tarefas: Armazena as tarefas.
-```sql
-CREATE TABLE tarefas (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    descricao TEXT NOT NULL,
-    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    data_conclusao TIMESTAMP NULL DEFAULT NULL,
-    status ENUM('pendente', 'concluido') DEFAULT 'pendente',
-    usuario_id INT NOT NULL,
-    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
-);
+Certifique-se de que o MySQL está rodando.
+Execute o script SQL localizado em sql/database.sql para criar as tabelas necessárias:
+```bash
+mysql -u [usuario] -p < database.sql
 ```
 
 ### 3. Configuração do Banco de Dados
@@ -121,7 +84,7 @@ A aplicação permite gerar relatórios das tarefas em PDF e Excel.
 PDF: Clique no link "Gerar Relatório PDF" para gerar um PDF com todas as tarefas.
 Excel: Clique no link "Gerar Relatório Excel" para baixar as tarefas em formato Excel.
 
-### 3. Exemplo de Como os Relatórios São Gerados
+### 3. Como os elatórios São Gerados
 
 A geração do relatório no formato Excel utiliza a biblioteca PhpSpreadsheet. Ao clicar no link de exportação, os dados das tarefas são recuperados do banco de dados e organizados em um arquivo Excel, enquanto o PDF utiliza a biblioteca TCPDF para gerar o relatório em formato de tabela.
 

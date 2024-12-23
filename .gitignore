@@ -1,0 +1,37 @@
+# Arquivos de configuração sensíveis
+src/db/connection.php
+.env
+
+# Dependências do Composer
+/vendor/
+
+# Arquivos do sistema
+*.log
+*.cache
+*.env
+.DS_Store
+
+# Diretórios de dependências do Node.js (se houver)
+node_modules/
+
+# Configurações do sistema operacional
+Thumbs.db
+.idea/
+.vscode/
+*.bak
+*.swp
+
+# Arquivos gerados automaticamente
+database.sql
+*.zip
+*.tar
+*.gz
+*.rar
+
+# Logs e relatórios
+*.log
+coverage/
+
+# Configurações específicas do servidor
+phpunit.xml
+phpunit.xml.dist

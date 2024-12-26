@@ -81,8 +81,8 @@ As tarefas podem ser visualizadas na página inicial após o login.
 
 A aplicação permite gerar relatórios das tarefas em PDF e Excel.
 
-PDF: Clique no link "Gerar Relatório PDF" para gerar um PDF com todas as tarefas.
-Excel: Clique no link "Gerar Relatório Excel" para baixar as tarefas em formato Excel.
+PDF: Clique no link "Exportar para PDF" para gerar um PDF com todas as tarefas.
+Excel: Clique no link "Exportar para Excel" para baixar as tarefas em formato Excel.
 
 ### 3. Como os elatórios São Gerados
 

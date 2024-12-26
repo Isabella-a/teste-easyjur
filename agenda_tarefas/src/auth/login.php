@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../../public/css/style.css">
 </head>
 <body>
     <div class="container">
@@ -20,8 +20,7 @@
             </div>
             <button type="submit">Entrar</button>
         </form>
+        <p>Não tem uma conta? <a href="register.php">Cadastre-se</a></p>
     </div>
-    <!-- Link para página de cadastro -->
-    <p>Não tem uma conta? <a href="register.php">Cadastre-se</a></p>
 </body>
 </html>

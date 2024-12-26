@@ -3,6 +3,13 @@ require '../../../vendor/autoload.php'; // Autoload do Composer
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+require '../db/connection.php';
+
+// Consultar as tarefas
+$query = "SELECT * FROM tarefas";
+$stmt = $conn->prepare($query);
+$stmt->execute();
+$tarefas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Criação do objeto Spreadsheet
 $spreadsheet = new Spreadsheet();
@@ -16,7 +23,7 @@ $sheet->setCellValue('D1', 'Data de Criação');
 $sheet->setCellValue('E1', 'Data de Conclusão');
 $sheet->setCellValue('F1', 'Status');
 
-// Dados que serão exportados (assumindo que $tarefas é um array com os dados)
+// Dados que serão exportados
 $row = 2; // Iniciar na segunda linha
 foreach ($tarefas as $tarefa) {
     // Convertendo os valores para UTF-8 para garantir que caracteres especiais sejam manipulados corretamente

@@ -66,9 +66,9 @@ Isso instalará o PhpSpreadsheet, que é usado para gerar os relatórios em Exce
 ### 5. Configuração do Ambiente
 Assegure-se de que o servidor web esteja configurado corretamente. Você pode usar o servidor embutido do PHP para testes locais.
 ```bash
-php -S localhost:8000 -t public
+php -S localhost:8000
 ```
-Abra seu navegador e acesse http://localhost:8000/public/dashboard.php.
+Abra seu navegador e acesse http://localhost:8000/agenda_tarefas/public/dashboard.php.
 
 ## Uso
 ### 1. Criar e Gerenciar Tarefas
